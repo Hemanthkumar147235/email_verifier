@@ -1,0 +1,47 @@
+.outer-container {
+  display: flex;
+  
+}
+.btn{
+  background-color: green;
+}
+
+.content {
+  flex: 1;
+  padding: 100px;
+ line-height: 35px;
+  padding-right: 30px;
+  
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+}
+
+
+
+
+.image-container {
+  flex: 1;
+  padding-top: 40px;
+  
+}
+
+  
+
+.custom-image {
+
+  height:650px;
+  max-width: 100%;
+  border-radius:50px;
+  
+
+  
+}
+

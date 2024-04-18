@@ -1,0 +1,72 @@
+
+<div *ngIf="!subbb" class="outer-container">
+    <div class="  content">
+        <h1>Stay updated!</h1>
+        <br>
+        <h4>join 60,000+ product manager receiving montly updates on:</h4>
+
+    
+    <form action="" [formGroup]="userodaform" (submit)="tosee()">
+
+        <div>
+            <input type="checkbox" >
+            <label for="">  product discovery and building what matters</label>
+            <br>
+            <input type="checkbox">
+            <label for="">  Measuring to  ensure update are a success</label>
+            <br>
+            <input type="checkbox">
+            <label for="">  and much more</label>
+        </div>
+
+        <div class="  inner-container ">
+            <div class="form-group">
+                <label for="email">email </label>
+                <input type="email"formControlName="email"   >
+                <ul *ngIf="!email?.valid&&(email?.touched||email?.dirty)">
+                    <li class="list-unstyled text-danger" *ngIf="email?.errors?.['required']">
+                        email is required
+                    </li>
+                    <li class="list-unstyled text-danger" *ngIf="email?.errors?.['maxlength']">
+                         maximum 50 character
+                    </li>
+                    <li class="list-unstyled text-danger" *ngIf="email?.errors?.['pattern']">
+                        type a valid email
+                    </li>
+
+                </ul>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="password">password </label>
+                <input type="text" formControlName="password" >
+                <ul *ngIf="password?.touched||password?.dirty">
+                    <li class="text-danger" *ngIf="password?.errors?.['required']">
+                        password required
+                    </li>
+                    <li class="text-danger" *ngIf="password?.errors?.['minlength']">
+                        minimum 8 characters required
+                    </li>
+                    <li class="text-danger" *ngIf="password?.errors?.['maxlength']">
+                        maximum 50 characters only
+                    </li>
+                    <li class="text-danger" *ngIf="password?.errors?.['pattern']">
+                        at least one lowercase letter, one uppercase letter, one digit, and one special character
+                    </li>
+                </ul>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-secondary "  style="width: 200px;" (click)="navigatefunc()" [disabled]="!userodaform.valid" >submit</button>
+        
+        </div>
+    </form>
+
+ 
+        </div>
+        <div class="image-container">
+            <img src="https://wallpaperbat.com/img/453776-free-wallpaper-for-laptop.jpg" alt="Placeholder Image" class="custom-image">
+          </div>
+</div>
+
+
+<app-subscribe [subbbinput]="subbb" ></app-subscribe>
